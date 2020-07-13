@@ -3,7 +3,7 @@ Customify is an all-in-one Skript.
 
 ## Installation
 #### Installation is super easy.
-1. Download the Repo as a zip.
+1. Download the repo as a zip.
 2. Extract the files in your 'scripts' folder.
 3. Reload skript or restart server.
 
