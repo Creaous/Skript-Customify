@@ -43,10 +43,7 @@ on script load:
 	send "&6+-------------------------------------------------------------+" to console
 	send "&6| {@prefix} &eWelcome to Customify &6v%{_v}%&e!		       &6|" to console
 	send "&6| {@prefix} &eTo get started please use &6/customify&e.           &6|" to console
-	if {@fGr8Erywx5tls7JiWCoL} is no:
-		send "&6| {@prefix} &eLicense Type: &f&lFree		               &6|" to console
-	else if {@fGr8Erywx5tls7JiWCoL} is yes:
-		send "&6| {@prefix} &eLicense Type: &a&lPremium		               &6|" to console
+	send "&6| {@prefix} &eLicense Type: &a&lOpen-Source		               &6|" to console
 	
 	if "{@updateBranch}" is "PTB" or "ptb":
 		if text from "https://pastebin.com/raw/erqJD1iW" is not "{@version}":
@@ -97,15 +94,11 @@ command /customify [<text>] [<text>]:
 			#else:
 			send "{@prefix} &6Help:"
 			send ""
-			if {@fGr8Erywx5tls7JiWCoL} is no:
-				send "&eLicense Type: &f&lFree"
-			else if {@fGr8Erywx5tls7JiWCoL} is yes:
-				send "&eLicense Type: &a&lPremium"
+			send "&eLicense Type: &a&lOpen-Source"
 			send ""
 			send "&c» &a/customify &7- &eBrings up the help."
 			send "&c» &a/customify undermaintenace (help) &7- &eBrings up the Under Maintenance help."
-			if {@fGr8Erywx5tls7JiWCoL} is yes:
-				send "&c» &a/customify chat (help) &7- &eBrings up the Chat System help."
+			send "&c» &a/customify chat (help) &7- &eBrings up the Chat System help."
 			send ""
 
 			set {_servername} to skutil yaml value "serverdata.servername" from file "plugins/Skript/scripts/Customify/data/config.yml"
@@ -151,7 +144,6 @@ command /customify [<text>] [<text>]:
 					HandleMaintenanceModeOn(player)
 					send "{@UnderMaintenance_Prefix} &aTurned on maintenance mode!"
 
-		if {@fGr8Erywx5tls7JiWCoL} is yes:
 			if arg-1 is "chat":
 				if arg-1 is not set:
 					send "{@prefix} &6Chat System Help:"
@@ -281,18 +273,16 @@ command /customify:undermaintenance:toggle:
 
 
 on chat:
-	if {@fGr8Erywx5tls7JiWCoL} is yes:
-		set {_date} to "%now%" parsed as date
+	set {_date} to "%now%" parsed as date
 
-		write "[%{_date}%] %player% : %message%" at line (file "plugins/Skript/scripts/Customify/logs/chat.log"'s line count +1) to file "plugins/Skript/scripts/Customify/logs/chat.log"
-		stop
+	write "[%{_date}%] %player% : %message%" at line (file "plugins/Skript/scripts/Customify/logs/chat.log"'s line count +1) to file "plugins/Skript/scripts/Customify/logs/chat.log"
+	stop
 
 on command:
-	if {@fGr8Erywx5tls7JiWCoL} is yes:
-		set {_date} to "%now%" parsed as date
+	set {_date} to "%now%" parsed as date
 
-		write "[%{_date}%] %player% : /%full command%" at line (file "plugins/Skript/scripts/Customify/logs/command.log"'s line count +1) to file "plugins/Skript/scripts/Customify/logs/command.log"
-		stop
+	write "[%{_date}%] %player% : /%full command%" at line (file "plugins/Skript/scripts/Customify/logs/command.log"'s line count +1) to file "plugins/Skript/scripts/Customify/logs/command.log"
+	stop
 
 on join:
 	set {_date} to "%now%" parsed as date
@@ -314,10 +304,9 @@ on join:
 
 
 on chat:
-	if {@fGr8Erywx5tls7JiWCoL} is yes:
-		if {Customify::Chat::Enabled} is true:
-			cancel event
-			broadcast "%colored player's prefix% %player's display name%&f: %message%" to the player's world # &8»
+	if {Customify::Chat::Enabled} is true:
+		cancel event
+		broadcast "%colored player's prefix% %player's display name%&f: %message%" to the player's world # &8»
 
 
 
