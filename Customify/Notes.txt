@@ -1,0 +1,11 @@
+Premium Store Page:
+	Includes:
+		- PREMIUM Support
+		- PREMIUM Log System (IPs | Chat | Commands)
+		- PREMIUM Chat System
+		- PREMIUM 2FA
+
+Normal Store Page:
+	Includes:
+		- PREMIUM Under Maintenance Script
+		- IP Log System
