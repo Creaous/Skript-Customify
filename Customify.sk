@@ -5,33 +5,33 @@
 #  \____|  \__,_| |___/  \__|  \___/  |_| |_| |_| |_| |_|    \__, | #
 #                                                            |___/  #
 
-# http://patorjk.com/software/taag/#p=display&f=Big&t=
+#
+#
+#      YOUR LICENSE IS OPEN-SOURCE, CONGRATULATIONS! YOU OWN THIS FOREVER!
+#
+#
 
 options:
 	prefix: &a&lCustomify &8»&e # »
-	version: PTB 1.0.0
+	version: PTB 1.0.0-RECODE
 
-	updateBranch: PTB # Public Testing Build Branch | Types: main, ptb
+	updateBranch: PTB # Public Testing Build Branch | Types: main, ptb (Main is currently unavaliable, only use PTB)
 
 	NoPerms: &c&lYou do not have permission to run this command!
 
 	Permission: Customify
 	AdminPermission: {@Permission}.Admin
 
-	fGr8Erywx5tls7JiWCoL: no # NO TO ACTIVATE FREE MODE OR YES TO ACTIVATE PREMIUM MODE
-
 	developerMode: no
 
 
 	# UNDER MAINTENANCE
-
 
 	UnderMaintenance_Prefix: &a&lCustomify &8| &6&lUnder Maintenance &7&l»
 	UnderMaintenance_AdminOnlyPrefix: &a&lCustomify &8| &6&lUnder Maintenance &8| &c&lADMIN ONLY &7&l»
 
 
 	# CHAT SYSTEM
-
 
 	ChatSystem_Prefix: &a&lCustomify &8| &6&lChat System &7&l»
 
@@ -46,20 +46,14 @@ on script load:
 	send "&6| {@prefix} &eLicense Type: &a&lOpen-Source		               &6|" to console
 	
 	if "{@updateBranch}" is "PTB" or "ptb":
-		if text from "https://pastebin.com/raw/erqJD1iW" is not "{@version}":
-			set {_version} to text from "https://pastebin.com/raw/erqJD1iW"
+		if text from "https://raw.githubusercontent.com/Creaous/Skript-Customify/ptb/VERSION" is not "{@version}":
+			set {_version} to text from "https://raw.githubusercontent.com/Creaous/Skript-Customify/ptb/VERSION"
 
 			send "&6| {@prefix} &eRunning &6{@version} &ebut &6%{_version}% &eis released!    &6|" to console
 		else:
 			send "&6| {@prefix} &eYou are running the latest version!             &6|" to console
-	else if "{@updateBranch}" is "Main", "MAIN" or "main":
-		if text from "https://pastebin.com/raw/j3pBiBf4" is not "{@version}":
-			set {_version} to text from "https://pastebin.com/raw/j3pBiBf4"
-
-			send "&6| {@prefix} &eRunning &6{@version} &ebut &6%{_version}% &eis released!    &6|" to console
-		else:
-			send "&6| {@prefix} &eYou are running the latest version!             &6|" to console
-
+	else:
+		send "&c&lWoah woah woah, What planet are you on?" to console
 	send "&6+-------------------------------------------------------------+" to console
 	send "" to console
 
