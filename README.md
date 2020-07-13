@@ -8,4 +8,4 @@ Customify is an all-in-one Skript.
 3. Reload skript or restart server.
 
 ## Forking and Cloning
-You are allowed to fork/clone this repo to modify it to your liking.
+You are allowed to fork/clone this repo to modify it to your liking, but please give me credit for making this.
