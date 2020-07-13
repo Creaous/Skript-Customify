@@ -1,4 +1,4 @@
-# Skript-Customify
+# Customify PTB Branch
 Customify is an all-in-one Skript.
 
 ## Installation
